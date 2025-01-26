@@ -12,7 +12,7 @@
             </a>
         @if(accountService.currentUser())
             {
-                <button mat-button mat-menu-trigger="menu">
+                <button mat-button [matMenuTriggerFor]="menu">
                     <mat-icon>arrow_drop_down</mat-icon>
                     <span>{{accountService.currentUser()?.email}}</span>
                 </button>

@@ -63,7 +63,7 @@ namespace API.Controllers
             });
         }
 
-        [HttpGet('auth-status')]
+        [HttpGet("auth-status")]
         public ActionResult GetAuthState()
         {
             return Ok(new {IsAuthenticated = User.Identity?.IsAuthenticated ?? false});
@@ -84,7 +84,7 @@ namespace API.Controllers
 
             if(!result.Succeeded) return BadRequest("Problem updating user address!");
 
-            return Ok(user.Address.ToDto();)
+            return Ok(user.Address.ToDto());
 
         }
     }
