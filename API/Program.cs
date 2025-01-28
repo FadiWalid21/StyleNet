@@ -19,6 +19,7 @@ builder.Services.AddScoped<ICartRepository,CartRepository>();
 builder.Services.AddDbContext<ApplicationDbContext>(opt=> {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
+builder.Services.AddScoped<IPaymentService,PaymentService>();
 
 builder.Services.AddHostedService<CartCleanupService>();
 builder.Services.AddCors();

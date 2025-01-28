@@ -14,5 +14,8 @@ namespace Core.Entities
         public string ItemsJson { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
         public DateTime ExpiresAt { get; set; }
+        public int? DeliveryMethodId { get; set; }
+        public string? ClientSecret { get; set; }
+        public string? PaymentIntentId { get; set; }
     }
 }
