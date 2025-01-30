@@ -62,11 +62,6 @@ namespace Infrastructure.Data
             return await ApplySpecification(spec).ToListAsync();
         }
 
-        public async Task<bool> SaveChangesAsync()
-        {
-            return await dbContext.SaveChangesAsync()>0;
-        }
-
         public void Update(T entity)
         {
             dbContext.Set<T>().Attach(entity);

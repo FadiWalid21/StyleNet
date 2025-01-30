@@ -20,6 +20,5 @@ namespace Core.Interfaces
         void Update(T item);
         void Delete(T item);
         bool Exist(int id);
-        Task<bool> SaveChangesAsync();
     }
 }
