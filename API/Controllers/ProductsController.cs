@@ -56,7 +56,7 @@ namespace API.Controllers
         [HttpPut("{id:int}")]
         public async Task<ActionResult> UpdateProduct(int id, Product product)
         {
-            if (id != product.Id || !repo.Exist(id)) return NotFound();
+            if (id != product.Id || !unit.Repository<Product>().Exist(id)) return NotFound();
 
             unit.Repository<Product>().Update(product);
 

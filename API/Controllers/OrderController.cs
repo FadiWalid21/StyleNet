@@ -40,14 +40,14 @@ namespace API.Controllers
                     ProductId = item.ProductId,
                     PictureUrl = item.PictureUrl,
                     ProductName = item.ProductName
-                }
+                };
 
                 var orderItem = new OrderItem
                 {
                     ItemOrdered = itemOrderd,
                     Price = item.Price,
                     Quantity = item.Quantity
-                }
+                };
 
                 items.Add(orderItem);
             }
@@ -60,11 +60,11 @@ namespace API.Controllers
                 DeliveryMethod = deliveryMethod,
                 OrderItems = items,
                 ShippingAddress = orderDto.ShippingAddress,
-                SubTotal = items.Sum(i => i.Price + i.Quantity),
+                SubTotal = items.Sum(i => i.Price * i.Quantity),
                 PaymentSummary = orderDto.PaymentSummary,
                 PaymentIntentId = cart.PaymentIntentId,
                 BuyerEmail = email
-            }
+            };
 
             unit.Repository<Order>().Add(order);
 
